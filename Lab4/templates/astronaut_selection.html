@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+    <head>
+        <title>{{title}}</title>
+    </head>
+    <body>
+        <h2>{{title}}</h2>
+        <form method="post" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+            {{ form.surname.label }} {{ form.surname(size=20) }}
+            {{ form.name.label }} {{ form.name(size=20) }}
+            {{ form.email.label }} {{ form.email(size=20) }}
+            {{ form.education.label }} {{ form.education(size=20) }}
+            {{ form.main_profession.label }} {{ form.main_profession(size=20) }}
+            {{ form.gender.label }} {{ form.gender(size=20) }}
+            {{ form.motivation.label }} {{ form.motivation(size=20) }}
+            {{ form.stay_on_mars.label }} {{ form.stay_on_mars() }}
+            {{ form.photo.label }} {{ form.photo() }}
+            {{ form.submit() }}
+        </form>
+    </body>
+{% endblock %}

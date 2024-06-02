@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<head>
+    <title>{{ title }}</title>
+</head>
+<body>
+    <h1>{{ title }}</h1>
+    {% for member in crew_data %}
+        <p>{{ member['name'] }} {{ member['last_name'] }} - Каюта № {{ loop.index }}{% if loop.index == 1 %} - капитан корабля{% endif %}</p>
+    {% endfor %}
+</body>
+{% endblock %}

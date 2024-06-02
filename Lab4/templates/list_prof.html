@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+    <head>
+        <title>{{ title }}</title>
+    </head>
+
+    <body>
+        <h1>{{ title }}</h1>
+        <type>
+            {% for profession in professions %}
+                <li>{{ profession }}</li>
+            {% endfor %}
+        </type>
+    </body>
+{% endblock %}

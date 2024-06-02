@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+    <head>
+        <title>{{ title }}</title>
+    </head>
+    <body>
+        <h2>Оформление каюты</h2>
+        <table>
+            <tr>
+                <th>Цвет стен</th>
+                <th>Эмблема</th>
+            </tr>
+            <tr>
+                <td>
+                    {% if sex == 'male' %}
+                        Красный
+                    {% elif sex == 'female' %}
+                        Розовый
+                    {% endif %}
+                </td>
+                <td>
+                    {% if age < 21 %}
+                        <img style="width: 10%;" src="static/img/Emblems/Emblem0.png" alt="Эмблема для молодых">
+                    {% else %}
+                        <img style="width: 10%;" src="static/img/Emblems/Emblem21.png" alt="Эмблема для взрослых">
+                    {% endif %}
+                </td>
+            </tr>
+        </table>
+    </body>
+{% endblock %}

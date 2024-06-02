@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+    <head>
+        <title>{{ title }}</title>
+    </head>
+    <body>
+        {% if error %}
+            <p>{{ error }}</p>
+        {% else %}
+            <h2>{{ member['name'] }} {{ member['last_name'] }}</h2>
+            <img style="width: 50%;" src="{{ url_for('static', filename=member['photo']) }}" alt="Фото члена экипажа">
+            <ul>
+                {% for profession in member['professions'] | sort %}
+                    <li>{{ profession }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </body>
+{% endblock %}
