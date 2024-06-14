@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+<head>
+    <title style="text-align: center;">{{ title }}</title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <h2>{{ title }}</h2>
+    {% for job in jobs %}
+        <h3>Action #{{job.id}}</h3>
+        <table>
+            <thead>
+                <tr style="background: rgb(221,221,221);">
+                  <th scope="col">Title of activity</th>
+                  <th scope="col">Team leader</th>
+                  <th scope="col">Duration</th>
+                  <th scope="col">List of collaborators</th>
+                  <th scope="col">Is finished</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr style="background: rgb(238,238,255);">
+                    <th>{{job.job}}</th>
+                    <th>{{job.user.surname}} {{job.user.name}}</th>
+                    <th>{{job.work_size}}</th>
+                    <th>{{job.collaborators}}</th>
+                    {% if job.is_finished %}
+                        <th style="background: rgb(209,250,177);">Finished</th>
+                    {% else %}
+                        <th style="background: rgb(255,238,255);">Is not finished</th>
+                    {% endif %}
+                </tr>
+            </tbody>
+        </table>
+    {% endfor %}
+</body>
+{% endblock %}
